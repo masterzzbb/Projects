@@ -3,7 +3,7 @@ package com.example.demo.POJO;
 import lombok.Data;
 
 /**
- * @author zhanglifeng
+ * @author zhubin
  * @since 2020-10-20 11:29
  */
 @Data
