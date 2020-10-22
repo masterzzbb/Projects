@@ -1,4 +1,4 @@
-package com.example.demo.POJO;
+package com.example.demo.pojo;
 
 import lombok.Data;
 
@@ -10,4 +10,5 @@ import lombok.Data;
 public class User {
     private  String name;
     private  String gender;
+
 }
