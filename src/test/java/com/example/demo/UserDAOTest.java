@@ -22,6 +22,7 @@ import java.util.UUID;
 public class UserDAOTest {
     @Autowired
     private UserDAO userDAO;
+
     @Test
     public void  selectAllTest(){
         List<UserDO> users = userDAO.listUsers();
