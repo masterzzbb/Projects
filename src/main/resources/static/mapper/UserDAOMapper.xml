@@ -2,11 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.example.demo.dao.UserDAO">
-    <select id="getUsers" resultType="com.example.demo.pojo.User">
-        select name,gender from user
+<!-- 查询所有用户   -->
+    <select id="listUsers" resultType="com.example.demo.pojo.UserDO">
+        select id,name,gender from user
     </select>
-
-    <select id="getUsersByName" resultType="com.example.demo.pojo.User">
-        select name,gender from user where name = #{name}
+<!--根据用户名查询用户-->
+    <select id="getUsersByName" resultType="com.example.demo.pojo.UserDO" >
+        select id,name,gender from user where id = #{name}
     </select>
+<!--根据用户名删除用户-->
+    <delete id="deleteUserById" >
+        delete from  user where id = #{id}
+    </delete>
+<!--添加用户信息-->
+    <insert id="addUser" parameterType="com.example.demo.pojo.UserDO">
+        insert into user (id, name, gender) values (#{user.id},#{user.name},#{user.gender})
+    </insert>
+<!--根据用户id更新用户信息-->
+    <update id="updateUser" parameterType="com.example.demo.pojo.UserDO">
+        update user set name = #{user.name}, gender = #{user.gender} where id = #{user.id}
+    </update>
 </mapper>

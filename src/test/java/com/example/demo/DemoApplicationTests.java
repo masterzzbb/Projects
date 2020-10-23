@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.dao.UserDAO;
-import com.example.demo.pojo.User;
+import com.example.demo.pojo.UserDO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -21,13 +21,13 @@ class DemoApplicationTests {
 
     @Test
     void contextLoads() {
-        List<User> users = userDAO.getUsers();
+        List<UserDO> users = userDAO.listUsers();
         System.out.println(users);
     }
 
     @Test
     void testGetUsersByName(){
-        List<User> users = userDAO.getUsersByName("三哥");
+        List<UserDO> users = userDAO.getUsersByName("三哥");
        log.info(users.toString());
     }
 
