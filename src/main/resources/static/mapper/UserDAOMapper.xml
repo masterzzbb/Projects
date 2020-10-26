@@ -8,7 +8,7 @@
     </select>
 <!--根据用户名查询用户-->
     <select id="getUsersByName" resultType="com.example.demo.pojo.UserDO" >
-        select id,name,gender from user where id = #{name}
+        select id,name,gender from user where name = #{name}
     </select>
 <!--根据用户名删除用户-->
     <delete id="deleteUserById" >
@@ -22,4 +22,8 @@
     <update id="updateUser" parameterType="com.example.demo.pojo.UserDO">
         update user set name = #{user.name}, gender = #{user.gender} where id = #{user.id}
     </update>
+
+    <select id="getUserById" resultType="com.example.demo.pojo.UserDO">
+        select id,name,gender from user where id = #{id}
+    </select>
 </mapper>

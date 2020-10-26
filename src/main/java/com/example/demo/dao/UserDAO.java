@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.UserDO;
+import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -43,4 +44,6 @@ public interface UserDAO {
      * @return 影响条数
      */
     Integer updateUser(@Param("user") UserDO user);
+
+    UserDO getUserById(@Param("id") String id);
 }

@@ -19,15 +19,35 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDAO userDAO;
 
-//    private List<UserDTO> listUsers(){
-//        List<UserDO> userDOS = userDAO.listUsers(); //?大写后面必须大写?<规范>
-//        List<UserDTO> userDTOS = new ArrayList<>();
-//        int index = 0;
-//        for (UserDO userDO:userDOS){
-//
-//        }
-//        return
-//
-//    }
+    @Override
+    public List<UserDO> listUsers() {
+        return userDAO.listUsers();
+    }
+
+    @Override
+    public List<UserDO> getUser(String name) {
+        return userDAO.getUsersByName(name);
+    }
+
+    @Override
+    public Integer updateUser(UserDO userDO) {
+        return userDAO.updateUser(userDO);
+    }
+
+    @Override
+    public Integer deleteUser(String id) {
+        return userDAO.deleteUserById(id);
+    }
+
+    @Override
+    public Integer insertUser(UserDO userDO) {
+        return userDAO.addUser(userDO);
+    }
+
+    @Override
+    public UserDO getUserById(String id) {
+        return userDAO.getUserById(id);
+    }
+
 
 }
